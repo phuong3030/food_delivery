@@ -1,0 +1,125 @@
+<header class="header">
+  <div class="top-block">
+    <div class="top-menu">
+      <div class="container">
+        <nav id="top-links" class="nav">
+          <ul class="list-inline">
+            <li><a href="/" title="Home"><i class="fa fa-home"></i><span>Home</span></a></li>
+            <li><a href="/wishlist" id="wishlist-total" title="Wish List"><i class="fa fa-star"></i><span>Wish List</span></a></li>
+            <li><a href="/my_account" title="My Account"><i class="fa fa-user"></i><span>My Account</span></a></li>
+            <li>
+              <%= link_to spree.account_path do %>
+                <i class="fa fa-user"></i>
+                <span><%= Spree.t(:my_account) %></span>
+              <% end %>
+            </li>
+            <li><a href="/:art" title="Shopping Cart"><i class="fa fa-shopping-cart"></i><span>Shopping Cart</span></a></li>
+            <li><a href="/checkout" title="Checkout"><i class="fa fa-share"></i><span>Checkout</span></a></li>
+          </ul>
+        </nav>
+        <div id="search" class="search">
+          <%= render 'spree/shared/search' %>
+        </div>
+      </div>
+    </div>
+    <div class="container"><div class="row">
+        <div class="col-sm-4">
+          <div class="phone clearfix">
+            <i class="fa fa-phone"></i>
+            <div>Call us now toll free:<br><span>1-800-234-5677</span></div>
+          </div>
+          <div class="button-login">
+            <%= render 'spree/shared/login_bar' %>
+          </div>
+        </div>
+        <div id="logo" class="logo col-sm-4">
+          <%= logo %>
+        </div>
+        <div class="col-sm-4">
+          <div class="box-cart">
+            <div id="cart" class="cart">
+              <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="dropdown-toggle">
+                <i class="fa fa-shopping-cart"></i>
+                <span id="cart-total" class="cart-total">0 item(s) - $0.00</span>
+                <span id="cart-total2" class="cart-total2">0</span> <i class="fa fa-caret-down"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li class="default-tx">
+                <p>Your shopping cart is empty!</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="box-currency">
+            <form action="" method="post" enctype="multipart/form-data" id="currency">
+              <div class="btn-group">
+                <span class="dropdown-toggle" data-toggle="dropdown">
+                  $ <span class="hidden-xs hidden-sm hidden-md hidden">Currency</span> </span>
+                <ul class="dropdown-menu">
+                  <li><button class="currency-select" type="button" name="EUR">€ Euro</button></li>
+                  <li><button class="currency-select" type="button" name="GBP">£ Pound Sterling</button></li>
+                  <li><button class="currency-select" type="button" name="USD">$ US Dollar</button></li>
+                </ul>
+              </div>
+            </form>
+          </div>
+          <div class="box-language">
+            <form action="/language" method="post" enctype="multipart/form-data" id="language">
+              <div class="btn-group">
+                <span class="dropdown-toggle" data-toggle="dropdown">
+                  <img class="hidden" src="<%= asset_path('flags/gb.png') %>" alt="English" title="English">
+                  en <span class="hidden-xs hidden-sm hidden-md hidden">Language</span> </span>
+                <ul class="dropdown-menu">
+                  <li><a href="en"><img src="<%= asset_path('flags/gb.png') %>" alt="English" title="English"> English</a></li>
+                </ul>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div></div>
+  </div>
+  <div id="menu-gadget" class="menu-gadget">
+    <div id="menu-icon" class="menu-icon">Categories</div>
+    <ul class="menu">
+      <li class="parent">
+      <a href="/category&amp;path=25">Bread &amp; Bakery</a>
+      <i class="fa fa-chevron-down"></i><ul>
+        <li>
+        <a href="/category&amp;path=30">Aenean</a>
+        </li>
+        <li class="parent">
+        <a href="/category&amp;path=106" class="parent">Cum sociis</a><i class="fa fa-chevron-down"></i><ul>
+          <li>
+          <a href="/category&amp;path=111">Ultricies</a>
+          </li>
+          <li>
+          <a href="/category&amp;path=113">Vitae diam</a>
+          </li>
+        </ul>
+        </li>
+      </ul>
+      </li>
+      <li>
+      <a href="/category&amp;path=37">Drinks</a>
+      </li>
+      <li>
+      <a href="/category&amp;path=33">Fresh Meats</a>
+      </li>
+      <li>
+      <a href="/category&amp;path=18">Fresh Fish</a>
+      </li>
+      <li>
+      <a href="/category&amp;path=82">Fruits</a>
+      </li>
+      <li>
+      <a href="/category&amp;path=110">Vegetables</a>
+      </li>
+      <li>
+      <a href="/category&amp;path=108">Grocery</a>
+      </li>
+      <li>
+      <a href="/category&amp;path=112">Frozen</a>
+      </li>
+    </ul>
+  </div>
+</header>

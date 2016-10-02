@@ -1,0 +1,16 @@
+<% if spree_current_user %>
+  <!-- TODO: Order historys -->
+  <%= link_to spree.logout_path do %>
+    <i class="fa fa-sign-out"></i>
+    <span><%= Spree.t(:logout) %></span>
+  <% end %>
+<% else %>
+  <%= link_to spree.registration_path do %>
+    <i class="fa fa-pencil-square-o"></i>
+    <span>Create an account</span>
+  <% end %>
+  <%= link_to spree.login_path do %>
+    <i class="fa fa-sign-in"></i>
+    <span><%= Spree.t(:login) %></span>
+  <% end %>
+<% end %>
