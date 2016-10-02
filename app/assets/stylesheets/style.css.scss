@@ -6129,17 +6129,16 @@ footer .social-list {
 .toTop {
   width: 55px;
   height: 55px;
-  line-height: 51px;
-  overflow: hidden;
+  line-height: 51px !important;
+  overflow: hidden !important;
   text-align: center;
-  font-size: 25px;
+  font-size: 25px !important;
   color: #8f959c;
   background: #424951;
   position: fixed;
   right: 40px;
   bottom: 100px;
   display: none;
-  overflow: hidden;
   text-decoration: none;
   z-index: 20;
   -webkit-border-radius: 50%;

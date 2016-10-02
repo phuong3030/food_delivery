@@ -1,0 +1,125 @@
+<div id="content" class="col-sm-9"> 
+  <h1><%= Spree.t(:new_customer) %></h1>
+  <p>If you already have an account with us, please login at the <a href="http://livedemo00.template-help.com/opencart_55608/index.php?route=account/login">login page</a>.</p>
+  <%= form_for resource, :as => :spree_user, :url => spree.registration_path, html: { class: 'form-horizontal' } do |f| %>
+    <fieldset id="account">
+      <legend>Your Personal Details</legend>
+      <!--
+         -<div class="form-group required">
+         -  <label class="col-sm-3 control-label" for="input-firstname">First Name</label>
+         -  <div class="col-sm-9">
+         -    <input type="text" name="firstname" value="" placeholder="First Name" id="input-firstname" class="form-control">
+         -  </div>
+         -</div>
+         -<div class="form-group required">
+         -  <label class="col-sm-3 control-label" for="input-lastname">Last Name</label>
+         -  <div class="col-sm-9">
+         -    <input type="text" name="lastname" value="" placeholder="Last Name" id="input-lastname" class="form-control">
+         -  </div>
+         -</div>
+         -->
+      <div class="form-group required">
+        <label class="col-sm-3 control-label" for="input-email">E-Mail</label>
+        <div class="col-sm-9">
+          <%= f.email_field :email, :class => 'form-control', :placeholder => Spree.t(:email) %>
+        </div>
+      </div>
+      <!--
+         -<div class="form-group required">
+         -  <label class="col-sm-3 control-label" for="input-telephone">Telephone</label>
+         -  <div class="col-sm-9">
+         -    <input type="tel" name="telephone" value="" placeholder="Telephone" id="input-telephone" class="form-control">
+         -  </div>
+         -</div>
+         -<div class="form-group">
+         -  <label class="col-sm-3 control-label" for="input-fax">Fax</label>
+         -  <div class="col-sm-9">
+         -    <input type="text" name="fax" value="" placeholder="Fax" id="input-fax" class="form-control">
+         -  </div>
+         -</div>
+         -->
+    </fieldset>
+    <!--
+       -<fieldset id="address">
+       -  <legend>Your Address</legend>
+       -  <div class="form-group">
+       -    <label class="col-sm-3 control-label" for="input-company">Company</label>
+       -    <div class="col-sm-9">
+       -      <input type="text" name="company" value="" placeholder="Company" id="input-company" class="form-control">
+       -    </div>
+       -  </div>
+       -  <div class="form-group required">
+       -    <label class="col-sm-3 control-label" for="input-address-1">Address 1</label>
+       -    <div class="col-sm-9">
+       -      <input type="text" name="address_1" value="" placeholder="Address 1" id="input-address-1" class="form-control">
+       -    </div>
+       -  </div>
+       -  <div class="form-group">
+       -    <label class="col-sm-3 control-label" for="input-address-2">Address 2</label>
+       -    <div class="col-sm-9">
+       -      <input type="text" name="address_2" value="" placeholder="Address 2" id="input-address-2" class="form-control">
+       -    </div>
+       -  </div>
+       -  <div class="form-group required">
+       -    <label class="col-sm-3 control-label" for="input-city">City</label>
+       -    <div class="col-sm-9">
+       -      <input type="text" name="city" value="" placeholder="City" id="input-city" class="form-control">
+       -    </div>
+       -  </div>
+       -  <div class="form-group required">
+       -    <label class="col-sm-3 control-label" for="input-postcode">Post Code</label>
+       -    <div class="col-sm-9">
+       -      <input type="text" name="postcode" value="" placeholder="Post Code" id="input-postcode" class="form-control">
+       -    </div>
+       -  </div>
+       -  <div class="form-group required">
+       -    <label class="col-sm-3 control-label" for="input-country">Country</label>
+       -    <div class="col-sm-9">
+       -      <select name="country_id" id="input-country" class="form-control">
+       -      </select>
+       -    </div>
+       -  </div>
+       -  <div class="form-group required">
+       -    <label class="col-sm-3 control-label" for="input-zone">Region / State</label>
+       -    <div class="col-sm-9">
+       -    </div>
+       -  </div>
+       -</fieldset>
+       -->
+    <fieldset>
+      <legend>Your Password</legend>
+      <div class="form-group required">
+        <label class="col-sm-3 control-label" for="input-password">Password</label>
+        <div class="col-sm-9">
+          <%= f.password_field :password, :class => 'form-control', :placeholder => Spree.t(:password) %>
+        </div>
+      </div>
+      <div class="form-group required">
+        <label class="col-sm-3 control-label" for="input-confirm">Password Confirm</label>
+        <div class="col-sm-9">
+          <%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => Spree.t(:confirm_password) %>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Newsletter</legend>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Subscribe</label>
+        <div class="col-sm-9">
+          <label class="radio-inline">
+            <input type="radio" name="newsletter" value="1">
+            Yes</label>
+          <label class="radio-inline">
+            <input type="radio" name="newsletter" value="0" checked="checked">
+            No</label>
+        </div>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <div class="pull-right">I have read and agree to the <a href="http://livedemo00.template-help.com/opencart_55608/index.php?route=information/information/agree&amp;information_id=3" class="agree"><b>Privacy Policy</b></a> <input type="checkbox" name="agree" value="1">
+        &nbsp;
+        <%= f.submit Spree.t(:continue), :class => 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>
