@@ -1,8 +1,5 @@
 <% content_for :sidebar do %>
-  <div data-hook="homepage_sidebar_navigation">
-    <%= render :partial => 'spree/shared/taxonomies' %>
-  </div>
-  <%= render 'spree/shared/sidebar' if content_for? :sidebar %>
+  <%= render 'spree/shared/sidebar' %>
 <% end %>
 
 <div data-hook="homepage_products">
@@ -10,5 +7,3 @@
     <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
   <% end %>
 </div>
-
-

@@ -18,6 +18,7 @@ gem 'dalli'
 gem 'pg'
 # gem 'capistrano-rails', group: :development
 gem 'unicorn', group: :production
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'pry-rails'

@@ -17,9 +17,11 @@
 
       <div class="container" data-hook>
         <div class="row">
-          <%= flash_messages %>
-          <%= yield %>
-          <%= render 'spree/shared/sidebar' %>
+          <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-9" %>" data-hook>
+            <%= flash_messages %>
+            <%= yield %>
+          </div>
+          <%= yield :sidebar %>
         </div>
       </div>
       
